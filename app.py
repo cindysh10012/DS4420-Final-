@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 from sklearn.preprocessing import MinMaxScaler
@@ -9,7 +10,6 @@ from tensorflow.keras.layers import Dense
 from tensorflow.keras.callbacks import EarlyStopping
 
 
-# Load your CSV data (replace with actual path if different)
 @st.cache_data
 def load_data():
     return pd.read_csv("Apple Financial Stamt Data 24_15.csv")
@@ -55,37 +55,37 @@ def calculate_metrics(actual, predicted):
     return mse, mae, mape
 
 
+# Streamlit app layout
+st.title("Apple Revenue Forecasting Using Neural Networks")
 
 # Sidebar navigation
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["📌 Project Overview", "📊 Interactive Neural Network"])
+page = st.sidebar.radio("Go to", [" Project Overview", " Interactive Neural Network"])
 
 # Landing Page
-if page == "📌 Project Overview":
-
-    st.header("Apple Revenue Forecasting Using Neural Networks")
+if page == " Project Overview":
 
     st.markdown("""
-    ### Project Summary
+    ###  Project Summary
     This project applies machine learning techniques to forecast Apple Inc.'s quarterly revenue.  
     Our goal is to leverage historical financial data to provide insights for corporate budgeting, planning, and strategy.
 
     We use a **Feedforward Neural Network (FNN)** to uncover nonlinear revenue trends in the time series data.
 
-    ### Why this matters
+    ###  Why this matters
     Financial forecasting is crucial for decision-making in businesses. Accurate revenue predictions:
     - Help allocate resources
     - Assess risks
     - Spot emerging trends
 
-    ### Neural Network Approach
+    ###  Neural Network Approach
     Our neural network model:
     - Uses 4 time-lagged values as inputs (previous 4 quarters)
     - Can be configured with different numbers of hidden layers and neurons
     - Outperforms traditional linear forecasting methods
     - Handles the nonlinear patterns in Apple's revenue growth
 
-    ### Interactive Features
+    ###  Interactive Features
     In the Interactive Neural Network section, you can:
     - Adjust the neural network architecture
     - See how different configurations affect prediction accuracy
@@ -93,7 +93,7 @@ if page == "📌 Project Overview":
     """)
 
 # Neural Network Interactive Page
-elif page == "Interactive Neural Network":
+elif page == " Interactive Neural Network":
     st.header("Configure Your Neural Network")
 
     # User inputs for neural network configuration
