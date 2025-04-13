@@ -1,6 +1,6 @@
 # DS4420-Final-
 # Introduction
-In the project we used AR4 model without any pre-built programming library and Neural Network model with Programming library such as neuralnet to forecast Apple company's Revenue.
+In the project we used AR4 model without any pre-built programming library and Neural Network model with some pre-built Programming library such as neuralnet to forecast Apple company's Revenue.
  
 # Streamlit App Demo
 **Demo Video**:  
